@@ -1,0 +1,30 @@
+# configuration file for dotnet-releaser
+[msbuild]
+project = "MinjaSharp.sln"
+configuration = "Release"
+
+[github]
+user = "phil-scott-78"
+repo = "minjasharp"
+
+[nuget]
+publish_draft = true # publish draft NuGet package per commit
+
+# Define platform-specific native libraries
+[[pack]]
+publish = true
+rid = ["win-x64"]
+
+[[pack]]
+publish = true
+rid = ["linux-x64"]
+
+[[pack]]
+publish = true
+rid = ["osx-x64"]
+
+[[pack]]
+publish = true
+rid = ["osx-arm64"]
+
+

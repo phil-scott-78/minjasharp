@@ -1,0 +1,36 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5F8A56D0-BAFC-40D8-9F4F-54D55A96F6C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinjaSharp", "src\MinjaSharp\MinjaSharp.csproj", "{BE70599F-8A4A-4D38-9442-B9B3A6478477}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0FBBC9A0-D0C6-4EE1-A0CF-9728C3E87B0F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MinjaSharp.Tests", "test\MinjaSharp.Tests\MinjaSharp.Tests.csproj", "{F3194339-5B98-40A5-9D33-0CDF3B837955}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE70599F-8A4A-4D38-9442-B9B3A6478477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE70599F-8A4A-4D38-9442-B9B3A6478477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE70599F-8A4A-4D38-9442-B9B3A6478477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE70599F-8A4A-4D38-9442-B9B3A6478477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3194339-5B98-40A5-9D33-0CDF3B837955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3194339-5B98-40A5-9D33-0CDF3B837955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3194339-5B98-40A5-9D33-0CDF3B837955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3194339-5B98-40A5-9D33-0CDF3B837955}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE70599F-8A4A-4D38-9442-B9B3A6478477} = {5F8A56D0-BAFC-40D8-9F4F-54D55A96F6C2}
+		{F3194339-5B98-40A5-9D33-0CDF3B837955} = {0FBBC9A0-D0C6-4EE1-A0CF-9728C3E87B0F}
+	EndGlobalSection
+EndGlobal
