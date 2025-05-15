@@ -51,7 +51,46 @@ namespace MinjaSharp.Tests
             
             var expected = "<|im_start|>system\nYou are a helpful AI assistant.<|im_end|>\n" +
                            "<|im_start|>user\nHello, how are you?<|im_end|>\n";
-            Assert.Equal(expected, result);
+            Assert.Equal(expected, result, ignoreLineEndingDifferences:true);
+        }
+        
+        [Fact]
+        public void RenderWithEnableThinkingWorks()
+        {
+            var request = new Qwen3ChatRequest
+            {
+                Messages =
+                [
+                    new ChatMessage { Role = "system", Content = "You are a helpful AI assistant." },
+                    new ChatMessage { Role = "user", Content = "Hello, how are you?" },
+                    new ChatMessage
+                    {
+                        Role = "assistant", Content = "I'm doing well, thank you for asking! How can I help you today?"
+                    }
+                ],
+                AddGenerationPrompt = true,
+                EnableThinking = false
+            };
+
+            var result = _template.Render(request);
+
+            var expected = """
+                           <|im_start|>system
+                           You are a helpful AI assistant.<|im_end|>
+                           <|im_start|>user
+                           Hello, how are you?<|im_end|>
+                           <|im_start|>assistant
+                           <think>
+                           
+                           </think>
+                           
+                           I'm doing well, thank you for asking! How can I help you today?<|im_end|>
+                           <|im_start|>assistant
+                           <think>
+                           
+                           </think>
+                           """;
+            Assert.Equal(expected.TrimEnd(), result.TrimEnd(), ignoreLineEndingDifferences:true);
         }
 
         [Fact]
@@ -85,7 +124,7 @@ namespace MinjaSharp.Tests
                            I'm doing well, thank you for asking! How can I help you today?<|im_end|>
 
                            """;
-            Assert.Equal(expected, result);
+            Assert.Equal(expected, result, ignoreLineEndingDifferences:true);
         }
 
         [Fact]
@@ -130,7 +169,7 @@ namespace MinjaSharp.Tests
                            I don't have real-time access to weather data. To get the current weather, you would need to check a weather service or app.<|im_end|>
 
                            """;
-            Assert.Equal(expected, result);
+            Assert.Equal(expected, result, ignoreLineEndingDifferences:true);
         }
         
         [Fact]

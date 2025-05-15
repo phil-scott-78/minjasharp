@@ -11,7 +11,7 @@ include(FetchContent)
 # --- minja Dependency ---
 FetchContent_Declare(
   minja
-  GIT_REPOSITORY "https://github.com/ochafik/minja"
+  GIT_REPOSITORY "https://github.com/google/minja"
   GIT_TAG main
   GIT_SHALLOW TRUE
   # Add EXCLUDE_FROM_ALL to prevent building unless explicitly requested
